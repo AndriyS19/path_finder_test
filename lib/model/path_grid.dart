@@ -30,7 +30,10 @@ class PathGrid {
     ];
 
     for (Coordinate dir in directions) {
-      Coordinate newPoint = Coordinate(point.xCoordinate + dir.xCoordinate, point.yCoordinate + dir.yCoordinate);
+      Coordinate newPoint = Coordinate(
+        point.xCoordinate + dir.xCoordinate,
+        point.yCoordinate + dir.yCoordinate,
+      );
       if (isWithinBounds(newPoint) && !isObstacle(newPoint)) {
         accessibleNeighbors.add(newPoint);
       }

@@ -57,7 +57,13 @@ class ShortestPathCubit extends Cubit<ShortestPathState> {
         PathFinder finder = PathFinder(grid);
         List<Coordinate> path = finder.findPath(gridData.start, gridData.end);
         String formattedPath = path.map((p) => p.toString()).join('->');
-        results.add(ShortestPathResult(pathId: gridData.id, pathSteps: path, pathDescription: formattedPath));
+        results.add(
+          ShortestPathResult(
+            pathId: gridData.id,
+            pathSteps: path,
+            pathDescription: formattedPath,
+          ),
+        );
         responsePort.send(
           counter * 100 / grids.length,
         );
